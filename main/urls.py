@@ -8,5 +8,6 @@ router.register(r'word', views.WordViewSet)
 router.register(r'user', views.UserViewSet)
 
 urlpatterns = [
-    url(r'^', include(router.urls))
+    url(r'', views.IndexView.as_view()),
+    url(r'^api/', include(router.urls))
 ]

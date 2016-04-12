@@ -1,6 +1,15 @@
+from django.shortcuts import render
+from django.views.generic import View
 from models import Counter, Word, User
 from rest_framework import viewsets
 from serializers import CounterSerializer, WordSerializer, UserSerializer
+
+
+class IndexView(View):
+    template_name = 'index.html'
+
+    def get(self, request):
+        return render(request, self.template_name)
 
 
 class CounterViewSet(viewsets.ModelViewSet):
